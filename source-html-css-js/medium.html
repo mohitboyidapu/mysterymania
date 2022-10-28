@@ -53,6 +53,11 @@
          width: 6rem;
          border-radius: 8px;
       }
+      .goback{
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+      }
       @media only screen and (max-width: 800px) {
          .game-board{
             margin-top: 3rem;
@@ -71,6 +76,9 @@
          .card img{
             width: 4.5rem;
             border-radius: 8px;
+         }
+         .goback{
+            font-size: 0.7rem;
          }
       }
    </style>
@@ -184,6 +192,9 @@
          <img class="hide" data-value="100"  id="15back" src="images/59223.jpg"  alt="">
       </div>
    </section>
-      
+   <div class="goback">
+      <a class="homebtn nav-btn" style="background-color: rgb(0, 0, 122);" href="diff.html">Home</a>
+      <a class="restartbtn nav-btn" style="background-color: rgb(0, 0, 122);" href="hard.html">Restart</a>
+   </div>
 </body>
 </html>
