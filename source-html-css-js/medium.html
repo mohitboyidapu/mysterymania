@@ -28,7 +28,7 @@
          }
       }
       #gameOverWindow{
-            width: 90%;
+            width: 60%;
       }
 
       .game-board{
@@ -59,6 +59,12 @@
             right: 2rem;
       }
       @media only screen and (max-width: 800px) {
+         #gameOverWindow{
+            width: 90%;
+         }
+         #blurWindow{
+            width: 100vw;
+         }
          .game-board{
             margin-top: 3rem;
             grid-template-columns: repeat(4, 4.5rem);
