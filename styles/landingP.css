@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+/* font-family: 'Nabla', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+/* font-family: 'Patua One', cursive; */
+
+
+:root{
+   --BrightRed: hsl(12, 88%, 59%);
+   --BgBlack: #090909;
+   --DarkBlue: hsl(228, 39%, 23%);
+   --DarkGrayishBlue: hsl(227, 12%, 61%);
+   --VeryDarkBlue: hsl(233, 12%, 13%);
+   --VeryPaleRed: hsl(13, 100%, 96%);
+   --VaryLightGray: hsl(0, 3%, 94%);
+}
+*{
+   color: white;
+   margin: 0px;
+   font-family: 'Be Vietnam Pro', sans-serif;
+   box-sizing: border-box;
+}
+body{
+   background-color: var(--BgBlack);
+   background-image: url(/images/city.jpg);
+   background-blend-mode: darken;
+   overflow-x: hidden;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+a{
+   text-decoration: none;
+}
+
+.container{
+   width: 80%;
+   margin: 1rem auto;
+}
+
+.navbar li{
+   list-style: none;
+   font-weight: 700;
+}
+
+.nav-btn {
+   font-size: 2rem;
+   font-weight: bold;
+   color: white;
+   box-shadow: 1px 4px 8px var(--BrightRed);
+   border-radius: 2rem;
+   background: linear-gradient(-45deg, #0f006d, #ff0062, #cf1706, #bc02fa);
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+   padding: 0.4em 1em;
+   border: none;
+}
+@keyframes gradient {
+   0% {
+      background-position: 0% 50%;
+   }
+   50% {
+      background-position: 100% 50%;
+   }
+   100% {
+      background-position: 0% 50%;
+}
+}
+.nav-btn:hover {
+   background-color: var(--BgBlack);
+   border: solid 1px var(--BrightRed);
+   cursor: pointer;
+   text-decoration: line-through;
+}
+
+.hero-bg{
+   filter: blur(10px);
+   opacity: 0.1;
+   position: absolute;
+   right: -100px;
+   top: -150px;
+   z-index: -1;
+}
+.hero {
+   margin-top: 6rem;
+   display: flex;
+   justify-content: space-between;
+   gap: 0.5rem;
+   align-items: center;
+}
+
+
+
+.hero-content{
+   /* width: 50%; */
+   align-items: center;
+}
+.cont-left {
+   width: 500px;
+}
+.hero-left h1{
+   font-family: 'Nabla', cursive;
+   font-size: 6rem;
+   /* margin: 1em 0 1em 0; */
+}
+.sub-para{
+   font-size: 1.5rem;
+   font-family: 'Patua One', cursive;
+   color: var(--DarkGrayishBlue);
+   width: 20rem;
+
+   line-height: 1.7em;
+
+}
+.hero-img{
+   width: 500px;
+   border-radius: 1rem;
+}
+.hero-img:hover{
+   /* border: solid 2px red; */
+   box-shadow: 1px 4px 10px var(--BrightRed);
+}
+
+
+.city-img{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 10rem;
+   width: 500px;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 1rem;
+}
+.city-img:hover{
+   box-shadow: 1px 4px 100px #9742f5;
+   /* filter: opacity(0.5); */
+}
+/* .cnt-img{
+   border-radius: 100%;
+   width: 200px;
+   position: absolute;
+} */
+.more-info{
+   margin: 10rem 0 0 0;
+   padding: 4rem 7rem;
+   background-color: var(--BgBlack);
+   background-size: 80rem;
+   background-position: 110px -90px;
+   display: flex;
+   /* flex-direction: row-reverse; */
+   justify-content: space-between;
+   align-items: center;
+}
+
+.mi-left{
+   width: 28rem;
+   font-size: 2rem;
+   font-weight: 600;
+   color: var(--VaryLightGray);
+}
+
+.more-info button{
+   border-radius: 10rem;
+   font-size: 1.5rem;
+   background-color: var(--BrightRed) ;
+   /* color: var(--BrightRed); */
+   box-shadow: none;
+}
+
+mi-bg-1{
+   
+   position: absolute;
+   bottom: 0px;
+   
+}
+
+ul{
+   list-style: none;
+}
+li{
+   margin-top: 1em;
+}
+
+
+@media only screen and (max-width: 970px) {
+   *{
+      text-align: center;
+   }
+   body{
+      overflow-x: hidden;   
+   }
+   .hero {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 4rem;
+   }
+   .hero-left h1{
+      font-size: 4rem;
+   }
+   .hero-img{
+      width: 300px;
+      border-radius: 1rem;
+   }
+   
+   .city-img{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10rem;
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 1rem;
+   }
+   .more-info{
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+   }
+   .mi-left{
+      width: 200px;
+      font-size: 1rem;
+   }
+
+ }

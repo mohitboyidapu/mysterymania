@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+body{
+   overflow-y: hidden;
+   overflow-x: hidden;
+}
+
+.score-board{
+   margin-top: 1rem;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   gap: 0.6rem;
+   padding: 0.6rem 1.5rem;
+}
+@media (max-width: 800px) {
+   /* … */
+   .score-board{
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+   }
+ }
+
+.score-board p{
+   text-align: center;
+   color: rgb(255, 255, 255);
+   border-radius: 30px;
+   padding: 1rem 2rem;
+   background-color: rgb(20, 0, 117);
+   font-weight: bold;
+   font-size: 1rem;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.score-board span{
+   color: rgb(255, 255, 255);
+   font-size: 1rem;
+   font-weight: bold;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+   /* font-family: ; */
+}
+
+.hide{
+   display: none;
+}
+.flex{
+   display: flex;
+}
+
+.flip-card{
+   /* border: 2px solid red; */
+   transform: rotateY(180deg);
+   transition: ease 1s;
+}
+
+
+#blurWindow{
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   background-color: rgb(0, 0, 0);
+   width: 200vw;
+   height: 110vh;
+   opacity: 0.8;
+}
+
+@media (max-width: 800px) {
+   /* … */
+   #gameOverWindow{
+      width: 100px;
+   }
+ }
+
+#gameOverWindow{
+   padding: 1rem;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 11;
+   border-radius: 1rem;
+   background-color: rgb(0, 0, 0);
+   width: 60%;
+   font-family: 'Nabla', cursive; 
+   text-align: center;
+   /* display: flex; */
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+#gameOverWindow button{
+   margin-top: 1rem;
+   font-weight: bold;
+   color: white;
+   box-shadow: 1px 4px 8px var(--BrightRed);
+   border-radius: 2rem;
+   background-color: var(--BrightRed);
+   padding: 1em 2em;
+   border: none;
+}
+#gameOverWindow img{
+   width: 300px;
+   display: none;
+}
+#gameOverWindow h2{
+   font-family: 'Nabla', cursive;
+   font-size: 3rem;
+}
+#gameOverWindow p{
+   font-family: 'Patua One', cursive;
+   /* font-weight: bold; */
+   font-size: 1.5rem;
+   margin-top: 2.5rem;
+}
+#danger h1{
+   color: black;
+}

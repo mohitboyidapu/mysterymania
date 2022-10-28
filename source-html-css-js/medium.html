@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="styles/easy.css">
+   <link rel="stylesheet" href="styles/landingP.css">
+
+   <title>Medium - Mystery Mania</title>
+
+   <style>
+      body {
+         background: linear-gradient(-45deg, #ff0000, #ff4089, #fffc41, #5080fa);
+         background-size: 400% 400%;
+         animation: gradient 9s ease infinite;
+         height: 100vh;
+      }
+      @keyframes gradient {
+         0% {
+            background-position: 0% 50%;
+         }
+         50% {
+            background-position: 100% 50%;
+         }
+         100% {
+            background-position: 0% 50%;
+         }
+      }
+      #gameOverWindow{
+            width: 90%;
+      }
+
+      .game-board{
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+         display: grid;
+         grid-template-columns: repeat(4, 6rem);
+         gap: 10px;
+         justify-content: center;
+         align-items: center;
+      }
+      .card{
+         background-color: rgb(20, 0, 117);
+         width: 6rem;
+         height: 6rem;
+         border-radius: 8px;
+         font-size: 4rem;
+      }
+      .card img{
+         width: 6rem;
+         border-radius: 8px;
+      }
+      @media only screen and (max-width: 800px) {
+         .game-board{
+            margin-top: 3rem;
+            grid-template-columns: repeat(4, 4.5rem);
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+         }
+         .card{
+            background-color: rgb(20, 0, 117);
+            width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 8px;
+            font-size: 4rem;
+         }
+         .card img{
+            width: 4.5rem;
+            border-radius: 8px;
+         }
+      }
+   </style>
+   <script src="scripts/medScript.js" defer></script>
+</head>
+<body>
+   <audio id="game-over-sfx" src="scripts/gameOver.mp3"></audio>
+   <audio id="goal-sfx" src="scripts/goal.mp3"></audio>
+   <audio id="miss-sfx" src="scripts/miss.mp3"></audio>
+   <audio id="success-sfx" src="scripts/success.mp3"></audio>
+
+
+   <div id="blurWindow" class="hide" style="z-index: 10;" ></div>
+   <article id="gameOverWindow" class="hide" >
+      <h2 id="gameFinishText">Game Over</h2>
+      <img class="congrats-img" id="congrats-img" src="images/congrats.gif" alt="">
+      <img class="lost-img" id="lost-img" src="images/lost.gif" alt="">
+      <p>Your Score is <span id="player-score">0</span></p>
+      <button id="restart-btn">Restart</button>
+   </article>
+
+   <div class="score-board">
+      <p class="label-score">
+         💯 Score: <span id="score">100</span>
+      </p>
+      <p class="label-highscore">
+          🥇 Highscore: <span id="highscore">0</span>
+      </p>
+   </div>
+   
+   <section class="med game-board">
+      <div data-value="0" class="card">
+         <img class="hide" data-value="100"  id="0front" src="images/4100_4_01.jpg"  alt="">
+         <img class="hide" data-value="100"  id="0miss" src="images/miss chance.png"  alt="">
+         <img class="hide" data-value="100"  id="0back" src="images/59223.jpg"  alt="">
+      </div>
+      <div data-value="1" class="card">
+         <img class="hide" data-value="100"  id="1miss" src="images/miss chance.png"  alt="">
+         <img class="hide" data-value="100"  id="1front" src="images/4100_4_01.jpg"  alt="">
+         <img class="hide" data-value="100"  id="1back" src="images/59223.jpg"  alt="">
+      </div>
+      <div data-value="2" class="card">
+         <img class="hide" data-value="100"  id="2miss" src="images/miss chance.png"  alt="">
+         <img class="hide" data-value="100"  id="2front" src="images/4100_4_01.jpg"  alt="">
+         <img class="hide" data-value="100"  id="2back" src="images/59223.jpg"  alt="">
+      </div>
+      <div data-value="3" class="card">
+         <img class="hide" data-value="100"  id="3miss" src="images/miss chance.png"  alt="">
+         <img class="hide" data-value="100"  id="3front" src="images/4100_4_01.jpg"  alt="">
+         <img class="hide" data-value="100"  id="3back" src="images/59223.jpg"  alt="">
+      </div>
+      <div data-value="4" class="card">
+         <img class="hide" data-value="100"  id="4miss" src="images/miss chance.png"  alt="">
+         <img class="hide" data-value="100"  id="4front" src="images/4100_4_01.jpg"  alt="">
+         <img class="hide" data-value="100"  id="4back" src="images/59223.jpg"  alt="">
+      </div>
+      <div data-value="5" class="card">
+         <img class="hide" data-value="100"  id="5miss" src="images/miss chance.png"  alt="">
+         <img class="hide" data-value="100"  id="5front" src="images/4100_4_01.jpg"  alt="">
+         <img class="hide" data-value="100"  id="5back" src="images/59223.jpg"  alt="">
+      </div>
+      <div data-value="6" class="card">
+         <img class="hide" data-value="100"  id="6miss" src="images/miss chance.png"  alt="">
+         <img class="hide" data-value="100"  id="6front" src="images/4100_4_01.jpg"  alt="">
+         <img class="hide" data-value="100"  id="6back" src="images/59223.jpg"  alt="">
+      </div>
+      <div data-value="7" class="card">
+         <img class="hide" data-value="100"  id="7miss" src="images/miss chance.png"  alt="">
+         <img class="hide" data-value="100"  id="7front" src="images/4100_4_01.jpg"  alt="">
+         <img class="hide" data-value="100"  id="7back" src="images/59223.jpg"  alt="">
+      </div>
+      <div data-value="8" class="card">
+         <img class="hide" data-value="100"  id="8miss" src="images/miss chance.png"  alt="">
+         <img class="hide" data-value="100"  id="8front" src="images/4100_4_01.jpg"  alt="">
+         <img class="hide" data-value="100"  id="8back" src="images/59223.jpg"  alt="">
+      </div>
+      <div data-value="9" class="card">
+         <img class="hide" data-value="100"  id="9miss" src="images/miss chance.png"  alt="">
+         <img class="hide" data-value="100"  id="9front" src="images/4100_4_01.jpg"  alt="">
+         <img class="hide" data-value="100"  id="9back" src="images/59223.jpg"  alt="">
+      </div>
+      <div data-value="10" class="card">
+         <img class="hide" data-value="100"  id="10front" src="images/4100_4_01.jpg"  alt="">
+         <img class="hide" data-value="100"  id="10miss" src="images/miss chance.png"  alt="">
+         <img class="hide" data-value="100"  id="10back" src="images/59223.jpg"  alt="">
+      </div>
+      <div data-value="11" class="card">
+         <img class="hide" data-value="100"  id="11miss" src="images/miss chance.png"  alt="">
+         <img class="hide" data-value="100"  id="11front" src="images/4100_4_01.jpg"  alt="">
+         <img class="hide" data-value="100"  id="11back" src="images/59223.jpg"  alt="">
+      </div>
+      <div data-value="12" class="card">
+         <img class="hide" data-value="100"  id="12miss" src="images/miss chance.png"  alt="">
+         <img class="hide" data-value="100"  id="12front" src="images/4100_4_01.jpg"  alt="">
+         <img class="hide" data-value="100"  id="12back" src="images/59223.jpg"  alt="">
+      </div>
+      
+      <div data-value="13" class="card">
+         <img class="hide" data-value="100"  id="13miss" src="images/miss chance.png"  alt="">
+         <img class="hide" data-value="100"  id="13front" src="images/4100_4_01.jpg"  alt="">
+         <img class="hide" data-value="100"  id="13back" src="images/59223.jpg"  alt="">
+      </div>
+      <div data-value="14" class="card">
+         <img class="hide" data-value="100"  id="14miss" src="images/miss chance.png"  alt="">
+         <img class="hide" data-value="100"  id="14front" src="images/4100_4_01.jpg"  alt="">
+         <img class="hide" data-value="100"  id="14back" src="images/59223.jpg"  alt="">
+      </div>
+      <div data-value="15" class="card">
+         <img class="hide" data-value="100"  id="15miss" src="images/miss chance.png"  alt="">
+         <img class="hide" data-value="100"  id="15front" src="images/4100_4_01.jpg"  alt="">
+         <img class="hide" data-value="100"  id="15back" src="images/59223.jpg"  alt="">
+      </div>
+   </section>
+      
+</body>
+</html>

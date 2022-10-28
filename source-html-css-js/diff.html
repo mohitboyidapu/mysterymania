@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Select Difficulty - Mystery Mania</title>
+   <link rel="stylesheet" href="styles/landingP.css">
+   <style>
+      body{
+         background-image: url(images/starsBG.gif);
+         /* background-image: url(https://picsum.photos/200); */
+         background-color: rgba(0, 0, 0, 0.5);
+         background-blend-mode: overlay;
+      }
+      .p1 {
+        /* background-blend-mode: color-; */
+        background-image: url(images/char1.jpg);
+        background-size: cover;
+      }
+      .p2 {
+        /* background-blend-mode: color-; */
+        background-image: url(images/char2.jpg);
+        background-size: cover;
+      }
+      .p3 {
+        /* background-blend-mode: color-; */
+        background-image: url(images/char3.jpg);
+        background-size: cover;
+      }
+      
+
+  .testimonials {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+  }
+
+  .test-head{
+    font-family: 'Nabla', cursive;
+    font-size: 4rem;
+    text-align: center;
+  }
+  .tests{
+    text-align: center;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .test-quote h3{
+    font-size: 2rem;
+    padding: 5px;
+    background: linear-gradient(-45deg, #0f006d, #ff0062, #cf1706, #bc02fa);
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+    border-radius: 10px;
+    margin-top: -3rem;
+  }
+  @keyframes gradient {
+         0% {
+            background-position: 0% 50%;
+         }
+         50% {
+            background-position: 100% 50%;
+         }
+         100% {
+            background-position: 0% 50%;
+    }
+  }
+  .test-quote{
+    padding: 1em 2em;
+    text-align: center;
+    height: 20rem;
+    width: 30rem;
+    border-radius: 10px;
+    background-color: black;
+    margin: 0px 1em;
+  }
+  
+  
+  .test-quote:hover{
+    border: 1px solid var(--BrightRed);
+    box-shadow: 1px 4px 10px var(--BrightRed);
+  }
+  .test-quote button{
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+    position: relative;
+    top: 270px;
+    background-color: red;
+  }
+  @media only screen and (max-width: 970px) {
+    .tests{
+      text-align: center;
+      margin-top: 0rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .test-head{
+      font-size: 2rem;
+    }
+    .tests article{
+      margin-top: 5rem;
+      width: 20rem;
+    }
+    .test-quote button{
+      position: relative;
+      top: 270px;
+    }
+    .p1{
+      margin-top: 40px;
+    }
+  }
+  </style>
+</head>
+<body>
+   <section class="testimonials container">
+      <h2 class="test-head">Choose the Difficulty level</h2>
+      <div class="tests">
+        <article class="test-quote p1">
+          <h3>Easy</h3>
+          <button class="nav-btn"><a href="easy.html">Start Game!</a></button>
+        </article>
+  
+        <article class="test-quote p2">
+          <h3>Medium</h3> 
+          <button class="nav-btn"><a href="medium.html">Start Game!</a></button>
+        </article>
+  
+        <article class="test-quote p3">
+          <h3>Hard</h3>
+          <button class="nav-btn"><a href="hard.html">Start Game!</a></button>
+        </article>
+      </div>
+    </section> 
+</body>
+</html>
